@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="__local_aars__:G.\MyGame2048\myGame2048\libs\pushservice-4.0.0.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/myGame2048/libs/pushservice-4.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

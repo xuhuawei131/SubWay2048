@@ -1,0 +1,134 @@
+/**
+		* SharedPreferenceManager.java V1.0 2014年6月12日 下午10:23:07
+		*
+		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
+		*
+		* Modification history(By WAH-WAY):
+		*
+		* Description:
+		*/
+
+		package com.huawei.utils;
+
+import java.util.Set;
+
+import com.huawei.application.BaseApplication;
+import com.huawei.bean.MySize;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.hardware.Camera.Size;
+
+	public class SharedPreferenceManager {
+		private static final String SHARE_NAME="camera_shared";
+		
+		//-------------------------------选中的保存文件大小----------------------------------------------
+		public static void saveSelectedPictureSize(Size size){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putInt("picture_width", size.width);
+			editor.putInt("picture_height", size.height);
+			editor.commit();
+		}
+		public static MySize getSelectedPictureSize(){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			int width=sp.getInt("picture_width", 0);
+			int heigth=sp.getInt("picture_height", 0);
+			if(width==0){
+				return null;
+			}else{
+				MySize size=new MySize(width, heigth);
+				return size;
+			}
+		}
+		
+		//-------------------------------选中的预览大小----------------------------------------------
+		public static void saveSelectedPreViewSize(Size size){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putInt("preview_width", size.width);
+			editor.putInt("preview_height", size.height);
+			editor.commit();
+		}
+		public static MySize getSelectedPreViewSize(){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			int width=sp.getInt("preview_width", 0);
+			int heigth=sp.getInt("preview_height", 0);
+			if(width==0){
+				return null;
+			}else{
+				MySize size=new MySize(width, heigth);
+				return size;
+			}
+		}
+		//------------------------------------是否是第一次运行-----------------------------------------
+		public static void saveFirstRun(boolean isFirst){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putBoolean("isFirst", isFirst);
+			editor.commit();
+		}
+		
+		public static boolean getFirstRun(){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			return sp.getBoolean("isFirst", true);
+		}
+		//------------------------------------保存密码-------------------------------------------------------
+		public static String getPassword(){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			return sp.getString("password", null);
+		}
+		public static void savePassword(String password){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putString("password", password);
+			editor.commit();
+		}
+		
+	// ------------------------------------是否启动相机模式-----------------------------------------
+	public static void saveCameraEnable(boolean enable) {
+		SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
+				SHARE_NAME, Context.MODE_PRIVATE);
+		Editor editor = sp.edit();
+		editor.putBoolean("camera_enable", enable);
+		editor.commit();
+	}
+
+	public static boolean getCameraEnable() {
+		SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
+				SHARE_NAME, Context.MODE_PRIVATE);
+		return sp.getBoolean("camera_enable", false);
+	}
+	
+	// ------------------------------------是否启动超级2048模式-----------------------------------------
+		public static void saveSuperEnable(boolean enable) {
+			SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
+					SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putBoolean("super_enable", enable);
+			editor.commit();
+		}
+
+		public static boolean getSuperEnable() {
+			SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
+					SHARE_NAME, Context.MODE_PRIVATE);
+			return sp.getBoolean("super_enable", false);
+		}
+		
+		//------------------------------------保存文件路径-------------------------------------------------------
+		public static String getFilePath(){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			return sp.getString("filepath", null);
+		}
+		public static void saveFilePath(String filepath){
+			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putString("filepath", filepath);
+			editor.commit();
+		}
+		
+		
+		
+		
+}

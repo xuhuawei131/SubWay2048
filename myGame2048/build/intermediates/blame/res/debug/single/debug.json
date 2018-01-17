@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_popup_disappear_anim.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\popup_disappear_anim.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_alphanim.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\alphanim.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_base.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_view_visible.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\view_visible.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_menu.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\menu.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_btn_slip.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-xhdpi\\btn_slip.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_setting_button_single.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\setting_button_single.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_single_pressed.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_single_pressed.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_listview_item_selector_bg.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\listview_item_selector_bg.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_dialog_bj.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\dialog_bj.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_list_selecter_bg.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\list_selecter_bg.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_setting_button_top.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\setting_button_top.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_photo.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_popup_appear_anim.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\popup_appear_anim.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_single_normal.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_single_normal.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_setting.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_setting.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_listview_item_selector.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\listview_item_selector.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_dialog_btn.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\dialog_btn.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_setting_button_bottom.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\setting_button_bottom.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_dialog_file.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\dialog_file.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_listview_divider_line.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\listview_divider_line.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_refresh.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\refresh.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_fragment.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\fragment.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_bkg_switch.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-xhdpi\\bkg_switch.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_btn_a_bg.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\btn_a_bg.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_btn_b_bg.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\btn_b_bg.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_icon.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-xhdpi\\app_icon.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_notification.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_notification.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_item_file.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\item_file.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_circle.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\circle.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_title_background.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\title_background.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_pressed.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_pressed.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_protocol.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_protocol.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_fileicon.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\fileicon.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_dialog_revolution.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\dialog_revolution.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_normal.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_normal.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_push_up_in.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\push_up_in.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_last_normal.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_last_normal.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_push_down_out.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\push_down_out.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_setting_button_mid.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\setting_button_mid.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_app_icon.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\app_icon.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_first_pressed.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_first_pressed.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_file_explorer.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_file_explorer.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_wheel_bg.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_back_btn.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\back_btn.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_off_btn.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\off_btn.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_setting_button_back.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\setting_button_back.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_first_normal.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_first_normal.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_preference_last_pressed.9.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_preference_last_pressed.9.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_item_album.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\item_album.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable_wheel_val.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable\\wheel_val.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\anim_view_invisible.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\anim\\view_invisible.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_on_btn.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\on_btn.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_back_btn_selected.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\back_btn_selected.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_dialog_password.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\dialog_password.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_white_btn.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\white_btn.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_base.xml.flat",
+        "source": "G:\\MyGame2048\\cameraFrameWork\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_main_base.xml"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_preference_right.png.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\drawable-hdpi\\preference_right.png"
+    },
+    {
+        "merged": "G:\\MyGame2048\\myGame2048\\build\\intermediates\\res\\merged\\debug\\layout_activity_album.xml.flat",
+        "source": "G:\\MyGame2048\\myGame2048\\src\\main\\res\\layout\\activity_album.xml"
+    }
+]
