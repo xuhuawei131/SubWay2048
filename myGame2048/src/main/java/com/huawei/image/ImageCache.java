@@ -23,44 +23,25 @@ import android.os.Environment;
 import android.util.Log;
 
 public abstract class ImageCache {
-	protected static final String DISK_CACHE_PATH = "/DeRun/image/"; // Í¼Æ¬»º´æµØÖ·
-	protected static final String DATA_CACHE_PATH = "/webimage_cache/"; //
-	protected String diskCachePath; // »º´æÄ¿Â¼
-	protected boolean diskCacheEnabled = false; // »º´æÄ¿Â¼ÊÇ·ñ´æÔÚ
+	protected static final String DISK_CACHE_PATH = "/DeRun/image/";
+	protected static final String DATA_CACHE_PATH = "/webimage_cache/";
+	protected String diskCachePath;
+	protected boolean diskCacheEnabled = false;
 	protected ExecutorService writeThread; //
 
-	/**
-	 * ´ÓÄÚ´æ»ñÈ¡Í¼Æ¬
-	 * 
-	 * @param url
-	 * @return
-	 */
+
 	public abstract Bitmap getBitmapFromMemory(String url);
 
-	/**
-	 * ½«Í¼Æ¬»º´æµ½ÄÚ´æÖÐ
-	 * 
-	 * @param url
-	 * @param bitmap
-	 */
+
 	public abstract void cacheBitmapToMemory(final String url,
 			final Bitmap bitmap);
 
-	/**
-	 * Çå¿ÕÄÚ´æÒÔ¼°ÎÄ¼þ
-	 */
+
 	public abstract void clear();
 
-	/**
-	 * Çå³ý³£×¤ÄÚ´æ
-	 */
+
 	public abstract void clearHoldMoemory();
 
-	/**
-	 * Çå³ýÄ³Ò»Í¼Æ¬ÒÔ¼°ÎÄ¼þ
-	 * 
-	 * @param url
-	 */
 	public abstract void remove(String url);
 
 	protected ImageCache(Context context) {
@@ -81,21 +62,12 @@ public abstract class ImageCache {
 		writeThread = Executors.newSingleThreadExecutor();
 	}
 
-	/**
-	 * »ñÈ¡Í¼Æ¬
-	 * 
-	 * @param url
-	 *            Í¼Æ¬µØÖ·
-	 * @return bitmap ¶ÔÏó
-	 */
+
 	public Bitmap get(final String url) {
 		Bitmap bitmap = null;
-		// Check for image in memory
 		bitmap = getBitmapFromMemory(url);
-		// Check for image on disk cache
 		if (bitmap == null) {
 			bitmap = getBitmapFromDisk(false,url);
-			// Write bitmap back into memory cache
 			if (bitmap != null) {
 				cacheBitmapToMemory(url, bitmap);
 			}
@@ -104,30 +76,18 @@ public abstract class ImageCache {
 		return bitmap;
 	}
 
-	/**
-	 * ±£´æÍ¼Æ¬
-	 * 
-	 * @param url
-	 *            Í¼Æ¬µØÖ·
-	 * @param bitmap
-	 *            Í¼Æ¬
-	 */
+
 	public void put(String url, Bitmap bitmap, byte[] data) {
 		if (bitmap != null) {
-			cacheBitmapToMemory(url, bitmap); // ÄÚ´æ
+			cacheBitmapToMemory(url, bitmap);
 		}
 		if (data != null) {
-			cacheBitmapToDisk(url, data); // SDCard
+			cacheBitmapToDisk(url, data);
 		}
 
 	}
 
-	/**
-	 * »º´æÍ¼Æ¬µ½SCDard
-	 * 
-	 * @param url
-	 * @param bitmap
-	 */
+
 	private void cacheBitmapToDisk(final String url, final Bitmap bitmap) {
 		writeThread.execute(new Runnable() {
 			@Override
@@ -155,15 +115,7 @@ public abstract class ImageCache {
 		});
 	}
 
-	/**
-	 * 
-	 * ¹¦ÄÜÃèÊö£º »º´æÍ¼Æ¬µ½sd¿¨
-	 * 
-	 * @param url
-	 *            Í¼Æ¬ÏÂÔØµØÖ·
-	 * @param data
-	 *            Í¼Æ¬×Ö½Ú
-	 */
+
 	private void cacheBitmapToDisk(final String url, final byte[] data) {
 		writeThread.execute(new Runnable() {
 			@Override
@@ -191,10 +143,10 @@ public abstract class ImageCache {
 	}
 
 	/**
-	 * Ìá³öÍ¼Æ¬
+	 * ï¿½ï¿½ï¿½Í¼Æ¬
 	 * 
 	 * @param url
-	 *            Í¼Æ¬µØÖ·
+	 *            Í¼Æ¬ï¿½ï¿½Ö·
 	 * @return
 	 */
 	protected String getCacheKey(String url) {
@@ -205,26 +157,26 @@ public abstract class ImageCache {
 	}
 
 	/**
-	 * È¥É«Í¬Ê±¼ÓÔ²½Ç
+	 * È¥É«Í¬Ê±ï¿½ï¿½Ô²ï¿½ï¿½
 	 * 
 	 * @param bmpOriginal
 	 *            Ô­Í¼
 	 * @param pixels
-	 *            Ô²½Ç»¡¶È
-	 * @return ÐÞ¸ÄºóµÄÍ¼Æ¬
+	 *            Ô²ï¿½Ç»ï¿½ï¿½ï¿½
+	 * @return ï¿½Þ¸Äºï¿½ï¿½Í¼Æ¬
 	 */
 	public Bitmap toGrayscale(Bitmap bmpOriginal, int pixels) {
 		return toRoundCorner(bmpOriginal, pixels);
 	}
 
 	/**
-	 * °ÑÍ¼Æ¬±ä³ÉÔ²½Ç
+	 * ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½Ô²ï¿½ï¿½
 	 * 
 	 * @param bitmap
-	 *            ÐèÒªÐÞ¸ÄµÄÍ¼Æ¬
+	 *            ï¿½ï¿½Òªï¿½Þ¸Äµï¿½Í¼Æ¬
 	 * @param pixels
-	 *            Ô²½ÇµÄ»¡¶È
-	 * @return Ô²½ÇÍ¼Æ¬
+	 *            Ô²ï¿½ÇµÄ»ï¿½ï¿½ï¿½
+	 * @return Ô²ï¿½ï¿½Í¼Æ¬
 	 */
 	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
 		Bitmap output = null;
@@ -250,9 +202,9 @@ public abstract class ImageCache {
 	}
 
 	/**
-	 * ´ÓSDCard¿¨»ñµÃÍ¼Æ¬
-	 * @param isLocal ÊÇ²»ÊÇÂ·¾¶
-	 * @param url Í¼Æ¬µØÖ·
+	 * ï¿½ï¿½SDCardï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
+	 * @param isLocal ï¿½Ç²ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+	 * @param url Í¼Æ¬ï¿½ï¿½Ö·
 	 * @return
 	 */
 	public Bitmap getBitmapFromDisk(boolean isLocal,String url) {
@@ -286,7 +238,7 @@ public abstract class ImageCache {
 	}
 
 	/**
-	 * »ñµÃÎÄ¼þ»º´æµ½SDCard
+	 * ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½æµ½SDCard
 	 * 
 	 * @param url
 	 * @return

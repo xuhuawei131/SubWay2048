@@ -1,12 +1,4 @@
-/**
-		* RadioRuler.java V1.0 2014Äê6ÔÂ11ÈÕ ÏÂÎç6:10:21
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
+
 
 package com.huawei.game2048.custom;
 
@@ -130,7 +122,7 @@ public class RadioRuler extends View {
 			canvas.drawBitmap(mRulerBg, 900 + mStartViewPosition, 20, null);
 		}
 
-		// mRulerBg µÄ³¤¶ÈÎª300£¬ÊÕÒô»ú±ê³ßµÄ³¤¶ÈÎª800£¬ËùÒÔÐèÒª¸ù¾ÝÎÒÃÇÐéÄâµÄÎ»ÒÆÀ´¼ÆËã²»Í¬µÄÓ¦¸Ã»­Í¼µÄÎ»ÖÃ
+		// mRulerBg ï¿½Ä³ï¿½ï¿½ï¿½Îª300ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÄ³ï¿½ï¿½ï¿½Îª800ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã²»Í¬ï¿½ï¿½Ó¦ï¿½Ã»ï¿½Í¼ï¿½ï¿½Î»ï¿½ï¿½
 		canvas.drawBitmap(mRulerBg, mStartViewPosition, 20, null);
 		canvas.drawBitmap(mRulerBg, mStartViewPosition + 300, 20, null);
 		canvas.drawBitmap(mRulerBg, mStartViewPosition + 600, 20, null);
@@ -339,7 +331,7 @@ public class RadioRuler extends View {
 		moveToScrollDistance(distance - mScrollDistance);
 	}
 
-	// ÓÃÓÚ¸¡µãÊýµÄ¾«È·¼ÆËã
+	// ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½È·ï¿½ï¿½ï¿½ï¿½
 	public static class FloatUtility {
 
 		public static float add(float f1, float f2) {

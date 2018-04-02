@@ -1,18 +1,6 @@
-/**
-		* BaseActivity.java V1.0 2014年6月12日 上午9:18:01
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
-
-		package com.huawei.cameraframework;
 
 
-import com.baidu.mobstat.StatService;
-
+package com.huawei.cameraframework;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -34,7 +22,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 	private Button btn_back;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);//取消标题栏
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initData();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base);

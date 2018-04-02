@@ -1,21 +1,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical"
-        android:visibility="visible" >
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:gravity="center_vertical|right"
-             >
+            android:padding="5dp">
+
             <Button
                 android:id="@+id/btn_menu"
                 android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,7 +46,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -57,7 +58,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingLeft="4dp"
-                    android:paddingRight="4dp" >
+                    android:paddingRight="4dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -82,7 +83,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingLeft="4dp"
-                    android:paddingRight="4dp" >
+                    android:paddingRight="4dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -100,39 +101,40 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-<RelativeLayout 
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-    <TextView
-            android:id="@+id/text_introduce"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="当前的模式是经典模式" />
-    <Button
-            android:id="@+id/btn_refresh"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             />
-    
-</RelativeLayout>
-        
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="当前的模式是经典模式" />
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/refresh" />
+
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/btnNewGame"
@@ -147,19 +149,17 @@
             <FrameLayout
                 android:id="@+id/gameContainer"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <com.huawei.game2048.view.GameView
                     android:id="@+id/gameView"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
-                </com.huawei.game2048.view.GameView>
+                    android:layout_height="fill_parent"/>
 
                 <com.huawei.game2048.view.AnimLayer
                     android:id="@+id/animLayer"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
-                </com.huawei.game2048.view.AnimLayer>
+                    android:layout_height="fill_parent"/>
             </FrameLayout>
         </LinearLayout>
     </LinearLayout>

@@ -27,19 +27,19 @@ import android.util.Log;
 
 
 public class WebImage implements SmartImage {
-	private static final int CONNECT_TIMEOUT = 5000; // 建立连接超时
-	private static final int READ_TIMEOUT = 10000; // 读取数据超时
-	private final static int DATA_BUFFER = 1024; // 缓冲区大小
-	public static final int AUTO_ROTATE = 1; // 自动旋转
-	private static ImageCache webImageCache; // 图片缓存
-	private SmartImageConfig mSmartImageConfig; // 图片配置对象
-	private String url; // 下载地址
+	private static final int CONNECT_TIMEOUT = 5000;
+	private static final int READ_TIMEOUT = 10000;
+	private final static int DATA_BUFFER = 1024;
+	public static final int AUTO_ROTATE = 1;
+	private static ImageCache webImageCache;
+	private SmartImageConfig mSmartImageConfig;
+	private String url;
 
 	long downloadSize;
 	long downloadPercent;
 	private long totalSize = -1;
-	long remoteSize = 0; // 文件大小
-	long currentSize = 0; // 上次下载大小
+	long remoteSize = 0;
+	long currentSize = 0;
 	private DownloadListener mDownloadListener;
 	private OnImageCacheListener listener;
 	public WebImage(String url,OnImageCacheListener listener) {
@@ -66,9 +66,6 @@ public class WebImage implements SmartImage {
 		this.mDownloadListener = mDownloadListener;
 	}
 
-	/**
-	 * 获取图片
-	 */
 	public Bitmap getBitmap(Context context) {
 		// Don't leak context
 		if (VERSION.SDK_INT >= 11) {
@@ -82,7 +79,7 @@ public class WebImage implements SmartImage {
 			}
 		}
 
-		// 首先从缓存中获得图片
+
 		Bitmap bitmap = null;
 		if (url != null) {
 			bitmap = webImageCache.get(url);
@@ -112,11 +109,7 @@ public class WebImage implements SmartImage {
 
 	}
 
-	/**
-	 * 从网络获取图片
-	 * @param url 图片地址
-	 * @return
-	 */
+
 	private Bitmap getBitmapFromUrl(String url) {
 		Bitmap bitmap = null;
 
@@ -156,7 +149,7 @@ public class WebImage implements SmartImage {
 				matrix.postRotate(90);
 				bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 			}
-			// 缓存图片
+
 			if (bitmap != null) {
 				webImageCache.put(url, bitmap, data);
 			}
@@ -168,10 +161,7 @@ public class WebImage implements SmartImage {
 		return bitmap;
 	}
 
-	/**
-	 * 清除缓存
-	 * @param url 图片地址
-	 */
+
 	public static void removeFromCache(String url) {
 		if (webImageCache != null) {
 			webImageCache.remove(url);
@@ -187,22 +177,12 @@ public static void clearHoldMoemory(){
 		webImageCache.clearHoldMoemory();
 	}
 }
-	/**
-	 * 去色同时加圆角
-	 * @param bmpOriginal 原图
-	 * @param pixels 圆角弧度
-	 * @return 修改后的图片
-	 */
+
 	public Bitmap toGrayscale(Bitmap bmpOriginal, int pixels) {
 		return toRoundCorner(bmpOriginal, pixels);
 	}
 
-	/**
-	 * 把图片变成圆角
-	 * @param bitmap 需要修改的图片
-	 * @param pixels 圆角的弧度
-	 * @return 圆角图片
-	 */
+
 	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
 		Bitmap output = null;
 		if (bitmap != null) {

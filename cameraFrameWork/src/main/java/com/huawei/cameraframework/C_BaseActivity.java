@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.baidu.mobstat.StatService;
 import com.huawei.bean.MySize;
 import com.huawei.constants.C_Constants;
 import com.huawei.utils.C_Utils;
@@ -51,7 +50,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
     protected abstract void requestService();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);//取消标题栏
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initData();
 		super.onCreate(savedInstanceState);
 		
@@ -102,7 +101,6 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 	            mCamera = null;
 			}
 		}
-		StatService.onPause(this);
 	}
 	@Override
 	protected void onResume() {
@@ -111,21 +109,11 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 		if(isEnable){
 			mSurfaceHolder.addCallback(this);
 		}
-		StatService.onResume(this);
 	}
 
 
 	
-	/**
-	 * 
-			* 功能描述：
-			* 拍照
-			* @author 许华维(WAH-WAY)
-			* <p>创建日期 ：2014年6月10日 上午11:00:15</p>
-			*
-			*
-			* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-	 */
+
   protected void take_Photo() {
 	  if (mCamera != null) {
 		  mCamera.takePicture(null, rawCallback, mPictureCallback);
@@ -138,7 +126,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 //  {  
 //    public void onShutter()  
 //    {  
-//      /* 按兀快门瞬间会呼?这里的程序 */
+//
 //    }  
 //  };
   
@@ -146,13 +134,11 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
   {  
     public void onPictureTaken(byte[] _data, Camera _camera)  
     {  
-      /* 要处理raw data?写?否 */
+
     }  
   };
   
-	 /**
-     * 拍照图片返回值
-     */
+
     private PictureCallback mPictureCallback = new PictureCallback() {
         @Override
         public void onPictureTaken(final byte[] data, Camera arg1) {
@@ -172,13 +158,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 	
 	
 	
-		/**
-		* 功能描述：
-		* 对焦
-		* @author 许华维(WAH-WAY)
-		* <p>创建日期 ：2014年5月30日 下午5:53:30</p>
-		* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-		*/
+
 	public void takeFocuse() {
 		
 		mCamera.autoFocus(mAutoFocusCallback);
@@ -186,11 +166,11 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 	}
 	/**
 	 * 
-			* 功能描述：
-			* 焦点放大
-			* @author 许华维(WAH-WAY)
-			* <p>创建日期 ：2014年5月31日 下午2:05:48</p>
-			* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
+			* ??????????
+			* ??????
+			* @author ???(WAH-WAY)
+			* <p>???????? ??2014??5??31?? ????2:05:48</p>
+			* <p>?????? ??(??????????????????/????)</p>
 	 */
 	protected void setZoomBig() {
 		if (isSupportZoom()) {
@@ -209,15 +189,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 		}
 	}
 	
-	/**
-	 * 
-			* 功能描述：
-			* 是否支持变焦
-			* @author 许华维(WAH-WAY)
-			* <p>创建日期 ：2014年5月31日 下午2:06:33</p>
-			* @return
-			* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-	 */
+
 	private boolean isSupportZoom() {
 		boolean isSuppport = false;
 		if (mCamera.getParameters().isZoomSupported())// myCamera.getParameters().isSmoothZoomSupported())
@@ -227,14 +199,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 		return isSuppport;
 	}
 	
-	/**
-	 * 
-			* 功能描述：
-			* 焦点放小
-			* @author 许华维(WAH-WAY)
-			* <p>创建日期 ：2014年5月31日 下午2:06:08</p>
-			* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-	 */
+
 	protected void setZoomSmall() {
 		if (isSupportZoom()) {
 			try {
@@ -251,9 +216,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 		}
 	}
 	
-	/**
-	 * 对焦的回调函数
-	 */
+
 	private Camera.AutoFocusCallback mAutoFocusCallback=new Camera.AutoFocusCallback(){
         @Override
         public void onAutoFocus(boolean success, Camera camera) {
@@ -281,15 +244,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
     
     
     
-    /**
-     * 
-    		* 功能描述：
-    		* 初始化摄像头的参数
-    		* @author 许华维(xuhuawei)
-    		* <p>创建日期 ：2014-4-29 下午4:09:48</p>
-    		* @param i 0为前置摄像头 1为后置摄像头
-    		* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-     */
+
 	@SuppressLint("NewApi")
 	protected void setCameraInfo(int i){
 		if (mCamera != null) {
@@ -305,10 +260,10 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
         }
 		
 		 params= mCamera.getParameters();
-	     params.setFlashMode(Parameters.FLASH_MODE_OFF);//关闭闪光灯
+	     params.setFlashMode(Parameters.FLASH_MODE_OFF);//????????
 	     params.setJpegQuality(100);
 	     params.setPictureFormat(PixelFormat.JPEG);
-	     params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);//设置聚焦方式为
+	     params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);//??????????
 	     
 	     setDisplayOrientation(cameraInfo);
 	     initPictureAndPreview();
@@ -350,11 +305,7 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 	}
 	
 	
-	/**
-     * 设置相机的展示方向
-     * @param info
-     * @Description:
-     */
+
     @SuppressLint("NewApi")
     private void setDisplayOrientation(CameraInfo info) {
         int rotation = getWindowManager().getDefaultDisplay().getRotation();
@@ -375,30 +326,19 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
         }
         int result;
         mCameraInfo = info;
-        if (info.facing == CameraInfo.CAMERA_FACING_FRONT) {// 前置摄像头
+        if (info.facing == CameraInfo.CAMERA_FACING_FRONT) {// ????????
             result = (info.orientation + degree) % 360;
             result = (360 - result) % 360;
-        } else {// 背面摄像头
+        } else {// ?????????
             result = (info.orientation - degree + 360) % 360;
         }
         mCamera.setDisplayOrientation(result);
     }
 	
 	
-	/**
-	 * 
-			* 功能描述：
-			* 获取支持的 图片文件输出分辨率列表
-			* @author 许华维(WAH-WAY)
-			* <p>创建日期 ：2014年6月8日 下午11:51:03</p>
-			*
-			* @return
-			*
-			* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
-	 */
+
 @SuppressLint("NewApi")
 	protected List<Size> getSupportedPictureSizes() {
-		// 照片拍出来的时候的尺寸支持的大小
 		if (mCamera == null || params == null) {
 			CameraInfo cameraInfo = new CameraInfo();
 			if (Build.VERSION.SDK_INT >= 9) {
@@ -414,17 +354,6 @@ public abstract  class  C_BaseActivity extends FragmentActivity implements Callb
 		return list_File;
 	}
 
-/**
- * 
-		* 功能描述：
-		* 预览在屏幕上的大小
-		* @author 许华维(WAH-WAY)
-		* <p>创建日期 ：2014年6月8日 下午11:59:00</p>
-		*
-		* @return
-		*
-		* <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
- */
 @SuppressLint("NewApi")
 	protected List<Size> getSupportedPreviewSizes() {
 		if (mCamera == null || params == null) {

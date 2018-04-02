@@ -1,12 +1,4 @@
-/**
- * MyFragment.java V1.0 2014年6月13日 下午5:54:26
- *
- * Copyright JIAYUAN Co. ,Ltd. All rights reserved.
- *
- * Modification history(By WAH-WAY):
- *
- * Description:
- */
+
 
 package com.huawei.fragment;
 
@@ -76,7 +68,7 @@ public class MyFragment extends Fragment implements OnItemClickListener,
 		text_finish.setOnClickListener(this);
 		text_create.setOnClickListener(this);
 
-		text_path.setText("当前路径:" + path.getAbsolutePath());
+		text_path.setText("path:" + path.getAbsolutePath());
 		
 		notificationListView();
 		

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cameraFrameWork/src/main/java/com/huawei/bean/MySize.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/cameraFrameWork/src/main/java/com/huawei/cameraframework/C_BaseActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/myGame2048/src/main/java/com/huawei/adapter/AlbumAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/myGame2048/src/main/java/com/huawei/fragment/MyFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/myGame2048/src/main/java/com/huawei/game2048/app/MyAppLication.java" charset="GBK" />
+  </component>
+</project>

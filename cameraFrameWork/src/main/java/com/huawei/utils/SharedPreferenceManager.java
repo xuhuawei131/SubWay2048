@@ -1,12 +1,4 @@
-/**
-		* SharedPreferenceManager.java V1.0 2014Äê6ÔÂ12ÈÕ ÏÂÎç10:23:07
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
+
 
 		package com.huawei.utils;
 
@@ -23,7 +15,7 @@ import android.hardware.Camera.Size;
 	public class SharedPreferenceManager {
 		private static final String SHARE_NAME="camera_shared";
 		
-		//-------------------------------Ñ¡ÖÐµÄ±£´æÎÄ¼þ´óÐ¡----------------------------------------------
+		//-------------------------------Ñ¡ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡----------------------------------------------
 		public static void saveSelectedPictureSize(Size size){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -43,7 +35,7 @@ import android.hardware.Camera.Size;
 			}
 		}
 		
-		//-------------------------------Ñ¡ÖÐµÄÔ¤ÀÀ´óÐ¡----------------------------------------------
+		//-------------------------------Ñ¡ï¿½Ðµï¿½Ô¤ï¿½ï¿½ï¿½ï¿½Ð¡----------------------------------------------
 		public static void saveSelectedPreViewSize(Size size){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -62,7 +54,7 @@ import android.hardware.Camera.Size;
 				return size;
 			}
 		}
-		//------------------------------------ÊÇ·ñÊÇµÚÒ»´ÎÔËÐÐ-----------------------------------------
+		//------------------------------------ï¿½Ç·ï¿½ï¿½Çµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-----------------------------------------
 		public static void saveFirstRun(boolean isFirst){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -74,7 +66,7 @@ import android.hardware.Camera.Size;
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getBoolean("isFirst", true);
 		}
-		//------------------------------------±£´æÃÜÂë-------------------------------------------------------
+		//------------------------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-------------------------------------------------------
 		public static String getPassword(){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getString("password", null);
@@ -86,7 +78,7 @@ import android.hardware.Camera.Size;
 			editor.commit();
 		}
 		
-	// ------------------------------------ÊÇ·ñÆô¶¯Ïà»úÄ£Ê½-----------------------------------------
+	// ------------------------------------ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½-----------------------------------------
 	public static void saveCameraEnable(boolean enable) {
 		SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
 				SHARE_NAME, Context.MODE_PRIVATE);
@@ -101,7 +93,7 @@ import android.hardware.Camera.Size;
 		return sp.getBoolean("camera_enable", false);
 	}
 	
-	// ------------------------------------ÊÇ·ñÆô¶¯³¬¼¶2048Ä£Ê½-----------------------------------------
+	// ------------------------------------ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2048Ä£Ê½-----------------------------------------
 		public static void saveSuperEnable(boolean enable) {
 			SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
 					SHARE_NAME, Context.MODE_PRIVATE);
@@ -116,7 +108,7 @@ import android.hardware.Camera.Size;
 			return sp.getBoolean("super_enable", false);
 		}
 		
-		//------------------------------------±£´æÎÄ¼þÂ·¾¶-------------------------------------------------------
+		//------------------------------------ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Â·ï¿½ï¿½-------------------------------------------------------
 		public static String getFilePath(){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getString("filepath", null);

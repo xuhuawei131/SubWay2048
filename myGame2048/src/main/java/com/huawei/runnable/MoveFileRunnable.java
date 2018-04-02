@@ -1,12 +1,4 @@
-/**
-		* MoveFileRunnable.java V1.0 2014年6月19日 上午12:09:26
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
+
 
 		package com.huawei.runnable;
 

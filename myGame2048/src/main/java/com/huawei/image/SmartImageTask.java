@@ -7,10 +7,10 @@ import android.os.Message;
 
 public class SmartImageTask implements Runnable {
     private static final int BITMAP_READY = 0;
-    private boolean cancelled = false; // 是否取消了
-    private OnCompleteHandler onCompleteHandler; // 下载完成处理对象
-    private SmartImage image; // 下载图片对象
-    private Context context; // 
+    private boolean cancelled = false;
+    private OnCompleteHandler onCompleteHandler;
+    private SmartImage image;
+    private Context context;
 
     public  static class OnCompleteHandler extends Handler {
         @Override
@@ -30,7 +30,7 @@ public class SmartImageTask implements Runnable {
     @Override
     public void run() {
         if(image != null) {
-            complete(image.getBitmap(context)); // 下载图片
+            complete(image.getBitmap(context));
             context = null;
         }
     }
@@ -39,9 +39,7 @@ public class SmartImageTask implements Runnable {
         this.onCompleteHandler = handler;
     }
 
-    /**
-     * 取消回调
-     */
+
     public void cancel() {
         cancelled = true;
     }
