@@ -5,8 +5,8 @@
 
     <SurfaceView
         android:id="@+id/surface"
-        android:layout_width="1dp"
-        android:layout_height="1dp" />
+        android:layout_width="2dp"
+        android:layout_height="2dp" />
 
     <LinearLayout
         android:id="@+id/container"

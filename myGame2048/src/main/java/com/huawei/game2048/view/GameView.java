@@ -3,7 +3,7 @@ package com.huawei.game2048.view;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.huawei.game2048.MainActivity;
+import com.huawei.game2048.OnGameViewListener;
 import com.huawei.game2048.util.MySharedPreferenceManager;
 
 import android.app.AlertDialog;
@@ -16,9 +16,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class GameView extends LinearLayout {
-    private MainActivity activity;
+
+     private int score = 0;
+
+    private OnGameViewListener listener;
     private Card[][] cardsMap = new Card[Config.LINES][Config.LINES];
     private List<Point> emptyPoints = new ArrayList<Point>();
+    private AnimLayer animLayer = null;
     public GameView(Context context) {
         super(context);
         initGameView();
@@ -29,11 +33,17 @@ public class GameView extends LinearLayout {
         initGameView();
     }
 
-    public void setGameViewContext(MainActivity activity) {
-        this.activity = activity;
+    public void setGameViewContext(OnGameViewListener activity) {
+        this.listener = activity;
+    }
+    public void setGameViewAnimLayer(AnimLayer animLayer) {
+        this.animLayer = animLayer;
     }
 
+
     private void initGameView() {
+        score=MySharedPreferenceManager.getScroe();
+
         setOrientation(LinearLayout.VERTICAL);
         setBackgroundColor(0xffbbada0);
         setOnTouchListener(new View.OnTouchListener() {
@@ -76,6 +86,9 @@ public class GameView extends LinearLayout {
         });
     }
 
+    /**
+     * 保存到本地
+     */
     private void saveCard2Sp() {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < Config.LINES; y++) {
@@ -100,6 +113,11 @@ public class GameView extends LinearLayout {
         startGame();
     }
 
+    /**
+     * 添加卡牌的view
+     * @param cardWidth
+     * @param cardHeight
+     */
     private void addCards(int cardWidth, int cardHeight) {
         Card c;
         LinearLayout line;
@@ -119,10 +137,11 @@ public class GameView extends LinearLayout {
         }
     }
 
+    /**
+     * 重新开始
+     */
     public void startNewGame() {
-
-        activity.clearScore();
-        activity.showBestScore(activity.getBestScore());
+        clearScore();
 
         for (int y = 0; y < Config.LINES; y++) {
             for (int x = 0; x < Config.LINES; x++) {
@@ -154,8 +173,10 @@ public class GameView extends LinearLayout {
         }
     }
 
+    /**
+     * 添加随机数
+     */
     private void addRandomNum() {
-
         emptyPoints.clear();
 
         for (int y = 0; y < Config.LINES; y++) {
@@ -171,7 +192,7 @@ public class GameView extends LinearLayout {
             Point p = emptyPoints.remove((int) (Math.random() * emptyPoints.size()));
             cardsMap[p.x][p.y].setNum(Math.random() > 0.1 ? 2 : 4);
 
-            activity.getAnimLayer().createScaleTo1(cardsMap[p.x][p.y]);
+            animLayer.createScaleTo1(cardsMap[p.x][p.y]);
         }
     }
 
@@ -188,7 +209,7 @@ public class GameView extends LinearLayout {
 
                         if (cardsMap[x][y].getNum() <= 0) {
 
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
+                            animLayer.createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
 
                             cardsMap[x][y].setNum(cardsMap[x1][y].getNum());
                             cardsMap[x1][y].setNum(0);
@@ -197,11 +218,11 @@ public class GameView extends LinearLayout {
                             merge = true;
 
                         } else if (cardsMap[x][y].equals(cardsMap[x1][y])) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
+                            animLayer.createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
                             cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
                             cardsMap[x1][y].setNum(0);
 
-                            activity.addScore(cardsMap[x][y].getNum());
+                            addScore(cardsMap[x][y].getNum());
                             merge = true;
                         }
 
@@ -228,17 +249,17 @@ public class GameView extends LinearLayout {
                     if (cardsMap[x1][y].getNum() > 0) {
 
                         if (cardsMap[x][y].getNum() <= 0) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
+                            animLayer.createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
                             cardsMap[x][y].setNum(cardsMap[x1][y].getNum());
                             cardsMap[x1][y].setNum(0);
 
                             x++;
                             merge = true;
                         } else if (cardsMap[x][y].equals(cardsMap[x1][y])) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
+                            animLayer.createMoveAnim(cardsMap[x1][y], cardsMap[x][y], x1, x, y, y);
                             cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
                             cardsMap[x1][y].setNum(0);
-                            activity.addScore(cardsMap[x][y].getNum());
+                            addScore(cardsMap[x][y].getNum());
                             merge = true;
                         }
 
@@ -254,6 +275,51 @@ public class GameView extends LinearLayout {
         }
     }
 
+    /**
+     * 清空分数
+     */
+    private void clearScore() {
+        score = 0;
+        MySharedPreferenceManager.saveScroe(score);
+        if (listener!=null){
+            listener.showScore(score);
+            listener.showBestScore(MySharedPreferenceManager.getBestScroe());
+        }
+    }
+
+    /**
+     * 添加分数
+     * @param s
+     */
+    private void addScore(int s){
+        score += s;
+
+        if (listener!=null){
+            listener.showScore(score);
+        }
+
+
+        MySharedPreferenceManager.saveScroe(score);
+        if(score>getBestScore()){
+            MySharedPreferenceManager.saveBestScroe(score);
+            if (listener!=null){
+                listener.showBestScore(score);
+            }
+        }
+    }
+
+
+    private int  getBestScore(){
+        return MySharedPreferenceManager.getBestScroe();
+    }
+
+    /**
+     * 获取分数
+     * @return
+     */
+    public int getScore(){
+        return score;
+    }
     private void swipeUp() {
 
         boolean merge = false;
@@ -265,7 +331,7 @@ public class GameView extends LinearLayout {
                     if (cardsMap[x][y1].getNum() > 0) {
 
                         if (cardsMap[x][y].getNum() <= 0) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
+                            animLayer.createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
                             cardsMap[x][y].setNum(cardsMap[x][y1].getNum());
                             cardsMap[x][y1].setNum(0);
 
@@ -273,10 +339,10 @@ public class GameView extends LinearLayout {
 
                             merge = true;
                         } else if (cardsMap[x][y].equals(cardsMap[x][y1])) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
+                            animLayer.createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
                             cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
                             cardsMap[x][y1].setNum(0);
-                            activity.addScore(cardsMap[x][y].getNum());
+                            addScore(cardsMap[x][y].getNum());
                             merge = true;
                         }
 
@@ -304,17 +370,17 @@ public class GameView extends LinearLayout {
                     if (cardsMap[x][y1].getNum() > 0) {
 
                         if (cardsMap[x][y].getNum() <= 0) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
+                            animLayer.createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
                             cardsMap[x][y].setNum(cardsMap[x][y1].getNum());
                             cardsMap[x][y1].setNum(0);
 
                             y++;
                             merge = true;
                         } else if (cardsMap[x][y].equals(cardsMap[x][y1])) {
-                            activity.getAnimLayer().createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
+                            animLayer.createMoveAnim(cardsMap[x][y1], cardsMap[x][y], x, x, y1, y);
                             cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
                             cardsMap[x][y1].setNum(0);
-                            activity.addScore(cardsMap[x][y].getNum());
+                            addScore(cardsMap[x][y].getNum());
                             merge = true;
                         }
 
@@ -360,6 +426,58 @@ public class GameView extends LinearLayout {
         }
 
     }
+    //	/**
+//     * 1.static int getMode(int measureSpec):
+//     * 2.static int getSize(int measureSpec):
+//     * 3.static int makeMeasureSpec(int size,int mode):
+//     */
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
+//    }
+//
+//    private int measureWidth(int measureSpec) {
+//        int result = 0;
+//        int specMode = MeasureSpec.getMode(measureSpec);
+//        int specSize = MeasureSpec.getSize(measureSpec);
+//
+//        if (specMode == MeasureSpec.EXACTLY) {
+//            // We were told how big to be
+//            result = specSize;
+//        } else {
+//            // Measure the text
+//            result = (int) mPaint.measureText(text) + getPaddingLeft() + getPaddingRight();
+//            if (specMode == MeasureSpec.AT_MOST) {
+//                // Respect AT_MOST value if that was what is called for by
+//                // measureSpec
+//                result = Math.min(result, specSize);// 60,480
+//            }
+//        }
+//
+//        return result;
+//    }
+//
+//    private int measureHeight(int measureSpec) {
+//        int result = 0;
+//        int specMode = MeasureSpec.getMode(measureSpec);
+//        int specSize = MeasureSpec.getSize(measureSpec);
+//
+//        if (specMode == MeasureSpec.EXACTLY) {
+//            // We were told how big to be
+//            result = specSize;
+//        } else {
+//            // Measure the text (beware: ascent is a negative number)
+//            if (specMode == MeasureSpec.AT_MOST) {
+//                result = Math.min(result, specSize);
+//            }
+//        }
+//        return result;
+//    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
 
+    }
 }

@@ -16,13 +16,11 @@ import com.huawei.game2048.constants.Constants;
 import com.huawei.game2048.util.MySharedPreferenceManager;
 import com.huawei.game2048.util.Util;
 import com.huawei.game2048.view.AnimLayer;
+import com.huawei.game2048.view.Card;
 import com.huawei.game2048.view.GameView;
 import com.huawei.utils.SharedPreferenceManager;
 
-public class MainActivity extends C_BaseActivity implements OnClickListener {
-
-
-	private int score = 0;
+public class MainActivity extends C_BaseActivity implements OnClickListener ,OnGameViewListener{
 	private TextView tvScore, tvBestScore;
 	private LinearLayout root = null;
 	private TextView btnNewGame;
@@ -56,13 +54,15 @@ public class MainActivity extends C_BaseActivity implements OnClickListener {
 		text_introduce = (TextView) findViewById(R.id.text_introduce);
 		btn_menu = (Button) findViewById(R.id.btn_menu);
 		btn_refresh = (Button) findViewById(R.id.btn_refresh);
+		animLayer = (AnimLayer) findViewById(R.id.animLayer);
 
 		gameView = (GameView) findViewById(R.id.gameView);
 		gameView.setGameViewContext(this);
+		gameView.setGameViewAnimLayer(animLayer);
 
 		btnNewGame = (TextView) findViewById(R.id.btnNewGame);
 
-		animLayer = (AnimLayer) findViewById(R.id.animLayer);
+
 		FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(
 				Constants.width - (MARGIN_LEFT + MARGIN_RIGHT), Constants.width
 						- (MARGIN_LEFT + MARGIN_RIGHT));
@@ -81,11 +81,10 @@ public class MainActivity extends C_BaseActivity implements OnClickListener {
 	}
 
 	protected void requestService() {
-		score=MySharedPreferenceManager.getScroe();
-		showScore();
+		int score=MySharedPreferenceManager.getScroe();
+		showScore(score);
 		int bestscroe=MySharedPreferenceManager.getBestScroe();
 		showBestScore(bestscroe);
-		
 	}
 	@Override
 	public void onClick(View v) {
@@ -116,42 +115,18 @@ public class MainActivity extends C_BaseActivity implements OnClickListener {
 		}
 	}
 
-	public void clearScore() {
-		score = 0;
-		MySharedPreferenceManager.saveScroe(score);
-		showScore();
-	}
-
-	public void showScore() {
-		tvScore.setText(score + "");
-	}
-
-	public void addScore(int s) {
-		score += s;
-		showScore();
-		
-		MySharedPreferenceManager.saveScroe(score);
-		
-		if(score>getBestScore()){
-			saveBestScore(score);
-			showBestScore(score);
-		}
-	}
-
-	public void saveBestScore(int s) {
-		MySharedPreferenceManager.saveBestScroe(s);
-	}
-
-	public int getBestScore() {
-	return	MySharedPreferenceManager.getBestScroe();
-	}
-
+	@Override
 	public void showBestScore(int s) {
 		tvBestScore.setText(s + "");
 	}
 
-	public AnimLayer getAnimLayer() {
-		return animLayer;
+	@Override
+	public void createScaleTo1(Card target) {
+
+	}
+
+	public void showScore(int  score) {
+		tvScore.setText(score + "");
 	}
 
 	@Override
