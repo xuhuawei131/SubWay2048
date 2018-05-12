@@ -23,44 +23,26 @@ import android.os.Environment;
 import android.util.Log;
 
 public abstract class ImageCache {
-	protected static final String DISK_CACHE_PATH = "/DeRun/image/"; // 图片缓存地址
+	protected static final String DISK_CACHE_PATH = "/DeRun/image/";
 	protected static final String DATA_CACHE_PATH = "/webimage_cache/"; //
-	protected String diskCachePath; // 缓存目录
-	protected boolean diskCacheEnabled = false; // 缓存目录是否存在
+	protected String diskCachePath;
+	protected boolean diskCacheEnabled = false;
 	protected ExecutorService writeThread; //
 
-	/**
-	 * 从内存获取图片
-	 * 
-	 * @param url
-	 * @return
-	 */
+
 	public abstract Bitmap getBitmapFromMemory(String url);
 
-	/**
-	 * 将图片缓存到内存中
-	 * 
-	 * @param url
-	 * @param bitmap
-	 */
+
 	public abstract void cacheBitmapToMemory(final String url,
 			final Bitmap bitmap);
 
-	/**
-	 * 清空内存以及文件
-	 */
+
 	public abstract void clear();
 
-	/**
-	 * 清除常驻内存
-	 */
+
 	public abstract void clearHoldMoemory();
 
-	/**
-	 * 清除某一图片以及文件
-	 * 
-	 * @param url
-	 */
+
 	public abstract void remove(String url);
 
 	protected ImageCache(Context context) {
@@ -81,13 +63,7 @@ public abstract class ImageCache {
 		writeThread = Executors.newSingleThreadExecutor();
 	}
 
-	/**
-	 * 获取图片
-	 * 
-	 * @param url
-	 *            图片地址
-	 * @return bitmap 对象
-	 */
+
 	public Bitmap get(final String url) {
 		Bitmap bitmap = null;
 		// Check for image in memory
@@ -104,17 +80,10 @@ public abstract class ImageCache {
 		return bitmap;
 	}
 
-	/**
-	 * 保存图片
-	 * 
-	 * @param url
-	 *            图片地址
-	 * @param bitmap
-	 *            图片
-	 */
+
 	public void put(String url, Bitmap bitmap, byte[] data) {
 		if (bitmap != null) {
-			cacheBitmapToMemory(url, bitmap); // 内存
+			cacheBitmapToMemory(url, bitmap); // 锟节达拷
 		}
 		if (data != null) {
 			cacheBitmapToDisk(url, data); // SDCard
@@ -122,12 +91,7 @@ public abstract class ImageCache {
 
 	}
 
-	/**
-	 * 缓存图片到SCDard
-	 * 
-	 * @param url
-	 * @param bitmap
-	 */
+
 	private void cacheBitmapToDisk(final String url, final Bitmap bitmap) {
 		writeThread.execute(new Runnable() {
 			@Override
@@ -155,15 +119,7 @@ public abstract class ImageCache {
 		});
 	}
 
-	/**
-	 * 
-	 * 功能描述： 缓存图片到sd卡
-	 * 
-	 * @param url
-	 *            图片下载地址
-	 * @param data
-	 *            图片字节
-	 */
+
 	private void cacheBitmapToDisk(final String url, final byte[] data) {
 		writeThread.execute(new Runnable() {
 			@Override
@@ -190,13 +146,7 @@ public abstract class ImageCache {
 		});
 	}
 
-	/**
-	 * 提出图片
-	 * 
-	 * @param url
-	 *            图片地址
-	 * @return
-	 */
+
 	protected String getCacheKey(String url) {
 		if (url != null) {
 			return url.replaceAll("[.:/,%?&=]", "+").replaceAll("[+]+", "+");
@@ -204,28 +154,12 @@ public abstract class ImageCache {
 		return url;
 	}
 
-	/**
-	 * 去色同时加圆角
-	 * 
-	 * @param bmpOriginal
-	 *            原图
-	 * @param pixels
-	 *            圆角弧度
-	 * @return 修改后的图片
-	 */
+
 	public Bitmap toGrayscale(Bitmap bmpOriginal, int pixels) {
 		return toRoundCorner(bmpOriginal, pixels);
 	}
 
-	/**
-	 * 把图片变成圆角
-	 * 
-	 * @param bitmap
-	 *            需要修改的图片
-	 * @param pixels
-	 *            圆角的弧度
-	 * @return 圆角图片
-	 */
+
 	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
 		Bitmap output = null;
 		if (bitmap != null) {
@@ -249,12 +183,7 @@ public abstract class ImageCache {
 		return output;
 	}
 
-	/**
-	 * 从SDCard卡获得图片
-	 * @param isLocal 是不是路径
-	 * @param url 图片地址
-	 * @return
-	 */
+
 	public Bitmap getBitmapFromDisk(boolean isLocal,String url) {
 		Bitmap bitmap = null;
 		if (diskCacheEnabled) {
@@ -285,12 +214,7 @@ public abstract class ImageCache {
 		return bitmap;
 	}
 
-	/**
-	 * 获得文件缓存到SDCard
-	 * 
-	 * @param url
-	 * @return
-	 */
+
 	private String getFilePath(String url) {
 		return diskCachePath + getCacheKey(url);
 	}

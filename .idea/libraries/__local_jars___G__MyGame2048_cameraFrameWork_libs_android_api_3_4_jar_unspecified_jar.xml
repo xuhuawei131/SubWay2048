@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="__local_aars__:G.\MyGame2048\cameraFrameWork\libs\android_api_3_4.jar:unspecified@jar">
+  <library name="__local_jars__:G.\MyGame2048\cameraFrameWork\libs\android_api_3_4.jar:unspecified@jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/cameraFrameWork/libs/android_api_3_4.jar!/" />
     </CLASSES>

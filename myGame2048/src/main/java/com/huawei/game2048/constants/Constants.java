@@ -8,7 +8,7 @@ public class Constants {
 	public static float density;
 	
 	
-	public static final String DISK_CACHE_PATH = "/JiaYuan/image/"; // Õº∆¨ª∫¥Êµÿ÷∑
+	public static final String DISK_CACHE_PATH = "/JiaYuan/image/";
 	public static final String DATA_CACHE_PATH = "/webimage_cache/";
 	
 	

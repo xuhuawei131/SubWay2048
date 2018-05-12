@@ -8,11 +8,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
-/**
- * 使用软引用
- * @author Administrator
- *
- */
+
 public class ImageCacheSoftReference extends ImageCache {
 	public ConcurrentHashMap<String, SoftReference<Bitmap>> mMemoryCache;
 	private static ImageCacheSoftReference instance;
@@ -29,11 +25,7 @@ public class ImageCacheSoftReference extends ImageCache {
 		return instance;
 	}
 
-	/**
-	 * 从内存中获取图片
-	 * @param url 图片地址
-	 * @return bitmap 对象
-	 */
+
 	public Bitmap getBitmapFromMemory(String url) {
 		Bitmap bitmap = null;
 		SoftReference<Bitmap> softRef = mMemoryCache.get(getCacheKey(url));

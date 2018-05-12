@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class SplashActivity extends BaseActivity implements AnimationListener {
 	private TextView text_splash;
-	private Animation anim;// 透明度变化的动画
+	private Animation anim;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

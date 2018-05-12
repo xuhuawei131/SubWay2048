@@ -1,5 +1,5 @@
 /**
-		* SharedPreferenceManager.java V1.0 2014年6月12日 下午10:23:07
+		* SharedPreferenceManager.java V1.0 2014锟斤拷6锟斤拷12锟斤拷 锟斤拷锟斤拷10:23:07
 		*
 		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
 		*
@@ -10,7 +10,6 @@
 
 		package com.huawei.utils;
 
-import java.util.Set;
 
 import com.huawei.application.BaseApplication;
 import com.huawei.bean.MySize;
@@ -23,7 +22,6 @@ import android.hardware.Camera.Size;
 	public class SharedPreferenceManager {
 		private static final String SHARE_NAME="camera_shared";
 		
-		//-------------------------------选中的保存文件大小----------------------------------------------
 		public static void saveSelectedPictureSize(Size size){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -43,7 +41,6 @@ import android.hardware.Camera.Size;
 			}
 		}
 		
-		//-------------------------------选中的预览大小----------------------------------------------
 		public static void saveSelectedPreViewSize(Size size){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -62,7 +59,7 @@ import android.hardware.Camera.Size;
 				return size;
 			}
 		}
-		//------------------------------------是否是第一次运行-----------------------------------------
+
 		public static void saveFirstRun(boolean isFirst){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
@@ -74,7 +71,6 @@ import android.hardware.Camera.Size;
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getBoolean("isFirst", true);
 		}
-		//------------------------------------保存密码-------------------------------------------------------
 		public static String getPassword(){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getString("password", null);
@@ -86,7 +82,6 @@ import android.hardware.Camera.Size;
 			editor.commit();
 		}
 		
-	// ------------------------------------是否启动相机模式-----------------------------------------
 	public static void saveCameraEnable(boolean enable) {
 		SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
 				SHARE_NAME, Context.MODE_PRIVATE);
@@ -101,7 +96,6 @@ import android.hardware.Camera.Size;
 		return sp.getBoolean("camera_enable", false);
 	}
 	
-	// ------------------------------------是否启动超级2048模式-----------------------------------------
 		public static void saveSuperEnable(boolean enable) {
 			SharedPreferences sp = BaseApplication.instance.getSharedPreferences(
 					SHARE_NAME, Context.MODE_PRIVATE);
@@ -116,7 +110,6 @@ import android.hardware.Camera.Size;
 			return sp.getBoolean("super_enable", false);
 		}
 		
-		//------------------------------------保存文件路径-------------------------------------------------------
 		public static String getFilePath(){
 			SharedPreferences sp =BaseApplication.instance.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 			return sp.getString("filepath", null);

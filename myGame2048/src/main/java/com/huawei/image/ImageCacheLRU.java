@@ -16,7 +16,7 @@ public class ImageCacheLRU extends ImageCache {
 		int memClass = ((ActivityManager) context
 				.getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass();
 		memClass = memClass > 32 ? 32 : memClass;
-		// 使用可用内存�?/8作为图片缓存
+
 		final int cacheSize = 1024 * 1024 * memClass / 4;
 		mMemoryCache = new LruCache<String, Bitmap>(cacheSize) {
 			protected int sizeOf(String key, Bitmap bitmap) {
@@ -86,7 +86,7 @@ public class ImageCacheLRU extends ImageCache {
 	}
 
 	/**
-	 * 缓存图片到内�?	 * 
+	 * 缓存图片到内�?	 * 
 	 * @param url
 	 * @param bitmap
 	 */

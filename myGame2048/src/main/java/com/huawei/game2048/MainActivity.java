@@ -20,8 +20,6 @@ import com.huawei.game2048.view.GameView;
 import com.huawei.utils.SharedPreferenceManager;
 
 public class MainActivity extends C_BaseActivity implements OnClickListener {
-
-
 	private int score = 0;
 	private TextView tvScore, tvBestScore;
 	private LinearLayout root = null;

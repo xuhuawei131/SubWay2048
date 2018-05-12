@@ -6,8 +6,8 @@ import android.graphics.Bitmap;
 import android.os.Build.VERSION;
 
 public class LocalImage implements SmartImage{
-	private static ImageCache webImageCache; // 图片缓存
-	private String url; // 下载地址
+	private static ImageCache webImageCache;
+	private String url;
 
 	public LocalImage(String url) {
 		this.url = url;
@@ -17,11 +17,9 @@ public class LocalImage implements SmartImage{
 		this.url = url;
 	}
 
-	/**
-	 * 获取图片
-	 */
+
 	public Bitmap getBitmap(Context context) {
-		if (VERSION.SDK_INT >= 11) {//3.0 版本引入 LRU
+		if (VERSION.SDK_INT >= 11) {
 			if (webImageCache == null) {
 				webImageCache = ImageCacheLRU.getInstance(context);
 			}
@@ -31,7 +29,7 @@ public class LocalImage implements SmartImage{
 			}
 		}
 
-		// 首先从缓存中获得图片
+
 		Bitmap bitmap = null;
 		if (url != null) {
 			bitmap = webImageCache.getBitmapFromMemory(url);
@@ -46,10 +44,7 @@ public class LocalImage implements SmartImage{
 		return bitmap;
 	}
 
-	/**
-	 * 清除缓存
-	 * @param url 图片地址
-	 */
+
 	public static void removeFromCache(String url) {
 		if (webImageCache != null) {
 			webImageCache.remove(url);

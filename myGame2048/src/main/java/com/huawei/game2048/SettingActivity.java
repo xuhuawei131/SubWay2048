@@ -32,8 +32,8 @@ import com.huawei.utils.SharedPreferenceManager;
 public class SettingActivity extends C_BaseActivity implements OnClickListener,
 		onPopwindowSelectorListener, OnSwitchListener {
 
-	private static final String TITLE_PICTURE = "Ñ¡ÔñÍ¼Æ¬·Ö±æÂÊ´óÐ¡";
-	private static final String TITLE_PREVIEW = "Ñ¡ÔñÔ¤ÀÀ·Ö±æÂÊ´óÐ¡";
+	private static final String TITLE_PICTURE = "å›¾ç‰‡åˆ†è¾¨çŽ‡";
+	private static final String TITLE_PREVIEW = "é¢„è§ˆåˆ†è¾¨çŽ‡";
 
 	private ArrayList<Size> picture_list;
 	private ArrayList<Size> preview_list;
@@ -104,7 +104,6 @@ public class SettingActivity extends C_BaseActivity implements OnClickListener,
 
 	protected void requestService() {
 
-		// ---------------------³õÊ¼»¯Í¼Æ¬µÄÄ¬ÈÏ´óÐ¡---------------------------
 		MySize picture = SharedPreferenceManager.getSelectedPictureSize();
 		if (picture == null) {
 			List<Size> list_View = getSupportedPictureSizes();
@@ -115,7 +114,6 @@ public class SettingActivity extends C_BaseActivity implements OnClickListener,
 			text_picture_size.setText(picture.width + "X" + picture.height);
 		}
 
-		// ---------------------³õÊ¼»¯ÊÓÍ¼Ô¤ÀÀµÄÄ¬ÈÏ´óÐ¡---------------------------
 		MySize preview = SharedPreferenceManager.getSelectedPreViewSize();
 		if (preview == null) {
 			List<Size> list_View = getSupportedPreviewSizes();
@@ -126,7 +124,6 @@ public class SettingActivity extends C_BaseActivity implements OnClickListener,
 			text_preview_size.setText(preview.width + "X" + preview.height);
 		}
 
-		// --------------------Ïà»úÊÇ·ñÆô¶¯----------------------
 		boolean cameraEnable = SharedPreferenceManager.getCameraEnable();
 		if (cameraEnable) {
 			text_camera_enable.setText(R.string.setting_enable_content);
@@ -136,7 +133,6 @@ public class SettingActivity extends C_BaseActivity implements OnClickListener,
 		slip_camera.setSwitchState(cameraEnable);
 		slip_camera.setOnSwitchListener(this);
 
-		// ---------------------³¬¼¶2048Ä£Ê½ÊÇ·ñÆô¶¯---------------------
 		boolean superEnable = SharedPreferenceManager.getSuperEnable();
 		if (superEnable) {
 			text_super_enable.setText(R.string.setting_enable_content);

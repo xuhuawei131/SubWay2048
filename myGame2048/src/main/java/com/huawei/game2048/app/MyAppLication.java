@@ -1,12 +1,4 @@
-/**
-		* MyAppLication.java V1.0 2014年6月10日 下午3:23:48
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
+
 
 		package com.huawei.game2048.app;
 

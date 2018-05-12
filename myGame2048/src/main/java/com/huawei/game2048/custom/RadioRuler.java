@@ -1,12 +1,4 @@
-/**
-		* RadioRuler.java V1.0 2014年6月11日 下午6:10:21
-		*
-		* Copyright JIAYUAN Co. ,Ltd. All rights reserved.
-		*
-		* Modification history(By WAH-WAY):
-		*
-		* Description:
-		*/
+
 
 package com.huawei.game2048.custom;
 
@@ -130,7 +122,6 @@ public class RadioRuler extends View {
 			canvas.drawBitmap(mRulerBg, 900 + mStartViewPosition, 20, null);
 		}
 
-		// mRulerBg 的长度为300，收音机标尺的长度为800，所以需要根据我们虚拟的位移来计算不同的应该画图的位置
 		canvas.drawBitmap(mRulerBg, mStartViewPosition, 20, null);
 		canvas.drawBitmap(mRulerBg, mStartViewPosition + 300, 20, null);
 		canvas.drawBitmap(mRulerBg, mStartViewPosition + 600, 20, null);
@@ -339,26 +330,21 @@ public class RadioRuler extends View {
 		moveToScrollDistance(distance - mScrollDistance);
 	}
 
-	// 用于浮点数的精确计算
 	public static class FloatUtility {
-
 		public static float add(float f1, float f2) {
 			BigDecimal mbd1 = new BigDecimal(Float.toString(f1));
 			BigDecimal mbd2 = new BigDecimal(Float.toString(f2));
 			return mbd1.add(mbd2).floatValue();
 		}
-
 		public static float mulitiply(float f1, float f2) {
 			BigDecimal mbd1 = new BigDecimal(Float.toString(f1));
 			BigDecimal mbd2 = new BigDecimal(Float.toString(f2));
 			return mbd1.multiply(mbd2).floatValue();
 		}
-
 		public static float divide(float f1, float f2) {
 			BigDecimal mbd1 = new BigDecimal(Float.toString(f1));
 			BigDecimal mbd2 = new BigDecimal(Float.toString(f2));
 			return mbd1.divide(mbd2).floatValue();
 		}
 	}
-
 }
